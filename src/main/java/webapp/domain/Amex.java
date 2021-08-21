@@ -8,9 +8,8 @@ public class Amex extends MarcaTarjeta{
     }
 
     @Override
-    public Double tasaOperacion(Double importe) {
-        LocalDate currentDate = LocalDate.now();
-        int currentMonth = currentDate.getMonthValue();
-        return importe*(currentMonth*0.1);
+    public Double porcentajeTasa(LocalDate fecha) {
+        Double currentMonth = Double.valueOf(fecha.getMonthValue());
+        return (currentMonth*0.1)*0.01;
     }
 }

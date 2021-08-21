@@ -9,10 +9,10 @@ public class Visa extends MarcaTarjeta{
     }
 
     @Override
-    public Double tasaOperacion(Double importe){
-        LocalDate currentDate = LocalDate.now();
-        int currentYear = currentDate.getYear();
-        int currentMonth = currentDate.getMonthValue();
-        return importe*(currentYear/currentMonth);
+    public Double porcentajeTasa(LocalDate fecha) {
+        Double currentYear = Double.valueOf(fecha.getYear());
+        Double currentMonth = Double.valueOf(fecha.getMonthValue());
+        return ((currentYear%100)/currentMonth)*0.01;
     }
+
 }

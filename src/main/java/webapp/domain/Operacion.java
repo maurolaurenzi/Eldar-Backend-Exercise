@@ -9,10 +9,11 @@ public class Operacion {
 
     //class method: it should be called without creating a class instance
     public static boolean esValida(Double importe){
+
         return importe > 1000.00;
     }
     //code smell: metodo "pasamanos" -> mejorar
     public static Double calcularTasa(MarcaTarjeta marca, Double importe){
-        return marca.tasaOperacion(importe);
+        return marca.tasaOperacion(importe, LocalDate.now());
     }
 }

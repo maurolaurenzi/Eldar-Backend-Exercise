@@ -9,9 +9,8 @@ public class Nara extends MarcaTarjeta{
     }
 
     @Override
-    public Double tasaOperacion(Double importe) {
-        LocalDate currentDate = LocalDate.now();
-        int currentDay = currentDate.getDayOfMonth();
-        return importe*(currentDay/2);
+    public Double porcentajeTasa(LocalDate fecha) {
+        Double currentDay = Double.valueOf(fecha.getDayOfMonth());
+        return (currentDay/2)*0.01;
     }
 }
