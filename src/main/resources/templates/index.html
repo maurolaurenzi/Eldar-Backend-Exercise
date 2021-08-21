@@ -25,5 +25,25 @@
     <td th:text="${tarjeta.marca.nombre}">Wrox</td>
   </tr>
 </table>
+
+<h1>Lista de Marcas</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Marca</th>
+  </tr>
+  <tr th:each="marcaTarjeta : ${marcasTarjetas}">
+    <td th:text="${marcaTarjeta.id}">123</td>
+    <td th:text="${marcaTarjeta.nombre}"> Spring in Action</td>
+  </tr>
+</table>
+
+<br>
+<br>
+<form action="/tasas">
+  <input type="submit" value="Calcular tasa de operacion" />
+</form>
+
 </body>
 </html>

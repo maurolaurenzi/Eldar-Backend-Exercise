@@ -29,6 +29,14 @@ public abstract class MarcaTarjeta {
         this.nombre = nombre;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     //se pasa la fecha por parametro para realizar tests con fechas fijas
     public abstract Double porcentajeTasa(LocalDate fecha);
 
