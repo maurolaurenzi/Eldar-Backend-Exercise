@@ -1,7 +1,11 @@
 package webapp.domain;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 import java.time.LocalDate;
 
+@Entity
+@DiscriminatorValue("AMEX")
 public class Amex extends MarcaTarjeta {
     public Amex(NombreMarca nombre) {
         super(nombre);

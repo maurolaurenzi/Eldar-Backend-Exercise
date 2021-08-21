@@ -3,16 +3,21 @@ package webapp.domain;
 import webapp.domain.MarcaTarjeta;
 import webapp.domain.Operacion;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
-
+@Entity
 public class Tarjeta {
+    @Id @GeneratedValue
+    private Long id;
     private Integer numero;
     private String nombreTitular;
     private String apellidoTitutlar;
     private LocalDate fechaVencimiento;
+    @ManyToOne
     private MarcaTarjeta marca;
+    @OneToMany
     private Set<Operacion> operaciones = new HashSet<Operacion>();
 
 

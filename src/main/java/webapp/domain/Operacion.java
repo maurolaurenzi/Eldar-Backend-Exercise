@@ -1,8 +1,15 @@
 package webapp.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.time.LocalDate;
-
+@Entity
 public class Operacion {
+    @Id @GeneratedValue
+    private Long id;
+    @ManyToOne
     private Tarjeta tarjeta;
     private LocalDate fecha;
     private Double monto;
