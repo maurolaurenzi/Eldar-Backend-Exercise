@@ -1,9 +1,10 @@
 package webapp.domain;
 
+import webapp.domain.MarcaTarjeta;
+import webapp.domain.Operacion;
+
 import java.time.LocalDate;
-import java.util.Collection;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 public class Tarjeta {

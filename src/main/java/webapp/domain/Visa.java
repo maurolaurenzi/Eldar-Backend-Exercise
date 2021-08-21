@@ -1,8 +1,11 @@
 package webapp.domain;
 
+import webapp.domain.MarcaTarjeta;
+import webapp.domain.NombreMarca;
+
 import java.time.LocalDate;
 
-public class Visa extends MarcaTarjeta{
+public class Visa extends MarcaTarjeta {
 
     public Visa(NombreMarca nombre) {
         super(nombre);

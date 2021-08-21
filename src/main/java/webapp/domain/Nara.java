@@ -2,7 +2,7 @@ package webapp.domain;
 
 import java.time.LocalDate;
 
-public class Nara extends MarcaTarjeta{
+public class Nara extends MarcaTarjeta {
 
     public Nara(NombreMarca nombre) {
         super(nombre);

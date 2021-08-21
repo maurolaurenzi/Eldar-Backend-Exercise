@@ -2,7 +2,7 @@ package webapp.domain;
 
 import java.time.LocalDate;
 
-public class Amex extends MarcaTarjeta{
+public class Amex extends MarcaTarjeta {
     public Amex(NombreMarca nombre) {
         super(nombre);
     }
