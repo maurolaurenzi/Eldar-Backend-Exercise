@@ -13,7 +13,7 @@ public class Operacion {
         return importe > 1000.00;
     }
     //code smell: metodo "pasamanos" -> mejorar
-    public static Double calcularTasa(MarcaTarjeta marca, Double importe){
-        return marca.tasaOperacion(importe, LocalDate.now());
+    public static Double calcularTasa(MarcaTarjeta marca, Double importe, LocalDate fecha){
+        return marca.tasaOperacion(importe, fecha);
     }
 }
