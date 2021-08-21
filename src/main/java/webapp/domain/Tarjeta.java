@@ -72,4 +72,11 @@ public class Tarjeta {
     public boolean esValida(){
         return fechaVencimiento.isAfter(LocalDate.now());
     }
+
+    public String obtenerDatos(){
+        String datos = "Numero: " + numero.toString() + ". Titular: " + nombreTitular + " " + apellidoTitutlar
+                + ". Fecha de Vencimiento: " + fechaVencimiento.toString() +
+                ". Marca: " + marca.getNombre().toString();
+        return datos;
+    }
 }

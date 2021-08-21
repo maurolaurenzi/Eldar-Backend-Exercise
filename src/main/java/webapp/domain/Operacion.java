@@ -14,6 +14,37 @@ public class Operacion {
     private LocalDate fecha;
     private Double monto;
 
+    public Operacion(Tarjeta tarjeta, LocalDate fecha, Double monto) {
+        this.tarjeta = tarjeta;
+        this.fecha = fecha;
+        //chequear valor de monto
+        this.monto = monto;
+    }
+
+    public Tarjeta getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(Tarjeta tarjeta) {
+        this.tarjeta = tarjeta;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public Double getMonto() {
+        return monto;
+    }
+
+    public void setMonto(Double monto) {
+        this.monto = monto;
+    }
+
     //class method: it should be called without creating a class instance
     public static boolean esValida(Double importe){
 
