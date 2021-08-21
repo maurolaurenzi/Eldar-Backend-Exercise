@@ -5,10 +5,14 @@ import javax.persistence.Entity;
 import java.time.LocalDate;
 
 @Entity
-@DiscriminatorValue("AMEX")
+//@DiscriminatorValue("AMEX")
 public class Amex extends MarcaTarjeta {
     public Amex(NombreMarca nombre) {
         super(nombre);
+    }
+    //default constructor
+    public Amex(){
+        super();
     }
 
     @Override

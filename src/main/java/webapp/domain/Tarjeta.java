@@ -28,6 +28,8 @@ public class Tarjeta {
         this.fechaVencimiento = fechaVencimiento;
         this.marca = marca;
     }
+    //default constructor
+    public Tarjeta(){}
 
     public Integer getNumero() {
         return numero;
@@ -67,6 +69,14 @@ public class Tarjeta {
 
     public void setMarca(MarcaTarjeta marca) {
         this.marca = marca;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public boolean esValida(){

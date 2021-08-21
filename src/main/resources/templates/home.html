@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eldar Exercise Web Application</title>
+</head>
+<body>
+<h1>Lista de Tarjetas</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Numero</th>
+    <th>Nombre Titular</th>
+    <th>Apellido Titular</th>
+    <th>Fecha de Vencimiento</th>
+    <th>Marca</th>
+  </tr>
+  <tr th:each="tarjeta : ${tarjetas}">
+    <td th:text="${tarjeta.id}">123</td>
+    <td th:text="${tarjeta.numero}"> Spring in Action</td>
+    <td th:text="${tarjeta.nombreTitular}"> Spring in Action</td>
+    <td th:text="${tarjeta.apellidoTitutlar}">Wrox</td>
+    <td th:text="${tarjeta.fechaVencimiento}">Wrox</td>
+    <td th:text="${tarjeta.marca.nombre}">Wrox</td>
+  </tr>
+</table>
+</body>
+</html>

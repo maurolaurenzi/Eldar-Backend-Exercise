@@ -5,18 +5,21 @@ import java.time.LocalDate;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="marca",
-        discriminatorType = DiscriminatorType.STRING)
+/*@DiscriminatorColumn(name="marca",
+        discriminatorType = DiscriminatorType.STRING)*/
 public abstract class MarcaTarjeta {
     @Id @GeneratedValue
     private Long id;
-    @Transient
+    //@Transient
+    @Enumerated(EnumType.STRING)
     private NombreMarca nombre;
 
     public MarcaTarjeta(NombreMarca nombre) {
 
         this.nombre = nombre;
     }
+    //default constructor
+    public MarcaTarjeta(){}
 
     public NombreMarca getNombre() {
         return nombre;
@@ -32,4 +35,6 @@ public abstract class MarcaTarjeta {
     public Double tasaOperacion(Double importe, LocalDate fecha){
         return importe*porcentajeTasa(fecha);
     }
+
+
 }
