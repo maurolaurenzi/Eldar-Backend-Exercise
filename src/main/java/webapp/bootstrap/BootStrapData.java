@@ -67,7 +67,7 @@ public class BootStrapData implements CommandLineRunner {
                 + tarjetaVisa.obtenerDatos());
 
         System.out.println("Compra por $" + compra.getMonto() + " es valida: "
-                + compra.esValida(7000.00));
+                + compra.esValida());
 
         System.out.println("Tarjeta Amex con vencimiento: " + tarjetaAmex.getFechaVencimiento().toString()
                 + " es valida: " + tarjetaAmex.esValida());

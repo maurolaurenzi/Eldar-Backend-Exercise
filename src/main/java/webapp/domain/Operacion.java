@@ -1,6 +1,7 @@
 package webapp.domain;
 
 import com.sun.istack.NotNull;
+import webapp.domain.exceptions.OperacionInvalidaException;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,11 +20,16 @@ public class Operacion {
     @NotNull
     private Double monto;
 
-    public Operacion(Tarjeta tarjeta, LocalDate fecha, Double monto) {
+    public Operacion(Tarjeta tarjeta, LocalDate fecha, Double monto) throws OperacionInvalidaException {
         this.tarjeta = tarjeta;
         this.fecha = fecha;
         //chequear valor de monto
-        this.monto = monto;
+        if(monto > 1000.00) {
+            this.monto = monto;
+        }
+        else{
+            throw new OperacionInvalidaException("Operacion Invalida. El monto debe ser mayor a $1000");
+        }
     }
 
     public Tarjeta getTarjeta() {
@@ -50,10 +56,8 @@ public class Operacion {
         this.monto = monto;
     }
 
-    //class method: it should be called without creating a class instance
-    public static boolean esValida(Double importe){
-
-        return importe > 1000.00;
+    public boolean esValida(){
+        return monto > 1000.00;
     }
     //code smell: metodo "pasamanos" -> mejorar
     public static Double calcularTasa(MarcaTarjeta marca, Double importe, LocalDate fecha){

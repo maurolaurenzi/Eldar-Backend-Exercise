@@ -3,6 +3,7 @@ package webapp.domain;
 import com.sun.istack.NotNull;
 import webapp.domain.MarcaTarjeta;
 import webapp.domain.Operacion;
+import webapp.domain.exceptions.TarjetaInvalidaException;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -27,11 +28,21 @@ public class Tarjeta {
     private Set<Operacion> operaciones = new HashSet<Operacion>();
 
 
-    public Tarjeta(MarcaTarjeta marca, Integer numero, String nombreTitular, String apellidoTitutlar, LocalDate fechaVencimiento) {
+    public Tarjeta(MarcaTarjeta marca,
+                   Integer numero,
+                   String nombreTitular,
+                   String apellidoTitutlar,
+                   LocalDate fechaVencimiento) throws TarjetaInvalidaException {
         this.numero = numero;
         this.nombreTitular = nombreTitular;
         this.apellidoTitutlar = apellidoTitutlar;
-        this.fechaVencimiento = fechaVencimiento;
+        if(fechaVencimiento.isAfter(LocalDate.now())) {
+            this.fechaVencimiento = fechaVencimiento;
+        }
+        else{
+            throw new TarjetaInvalidaException("Tarjeta Invalida. " +
+                    "La fecha de vencimiento debe ser mayor a la fecha actual.");
+        }
         this.marca = marca;
     }
     //default constructor
