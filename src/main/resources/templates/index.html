@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!--<link th:href="@{/css/main.css}" rel="stylesheet" />-->
+    <link th:href = "@{/css/bootstrap.min.css}" rel="stylesheet">
     <title>Eldar Exercise Web Application</title>
 </head>
 <body>
 <h1>Lista de Tarjetas</h1>
 
-<table>
+<div class = "container">
+  <div class = "row">
+    <table class = "table table-responsive table-bordered table-striped">
   <tr>
     <th>ID</th>
     <th>Numero</th>
@@ -24,11 +28,15 @@
     <td th:text="${tarjeta.fechaVencimiento}">Wrox</td>
     <td th:text="${tarjeta.marca.nombre}">Wrox</td>
   </tr>
-</table>
+    </table>
+  </div>
+</div>
 
 <h1>Lista de Marcas</h1>
 
-<table>
+<div class = "container">
+  <div class = "row">
+    <table class = "table table-responsive table-bordered table-striped">
   <tr>
     <th>ID</th>
     <th>Marca</th>
@@ -37,7 +45,9 @@
     <td th:text="${marcaTarjeta.id}">123</td>
     <td th:text="${marcaTarjeta.nombre}"> Spring in Action</td>
   </tr>
-</table>
+    </table>
+  </div>
+</div>
 
 <br>
 <br>
