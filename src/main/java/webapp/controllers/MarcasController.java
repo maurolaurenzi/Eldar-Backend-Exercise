@@ -14,12 +14,13 @@ import webapp.repositories.RepositorioMarcaTarjetas;
 import java.time.LocalDate;
 
 @Controller
-public class TasaController {
+public class MarcasController {
     private final RepositorioMarcaTarjetas repositorioMarcaTarjetas;
 
-    public TasaController(RepositorioMarcaTarjetas repositorioMarcaTarjetas) {
+    public MarcasController(RepositorioMarcaTarjetas repositorioMarcaTarjetas) {
         this.repositorioMarcaTarjetas = repositorioMarcaTarjetas;
     }
+    //buscamos la marca segun el nombre -> deberia implementarse metodo en Repositorio -> findByName()
     @RequestMapping("/tasas/valor")
     public String getTasa(Model model, @RequestParam(name = "marca") NombreMarca nombre,
                           @RequestParam(name = "monto") Double monto){

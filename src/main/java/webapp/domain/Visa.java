@@ -7,13 +7,13 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.time.LocalDate;
 @Entity
-//@DiscriminatorValue("VISA")
 public class Visa extends MarcaTarjeta {
 
     public Visa(NombreMarca nombre) {
 
         super(nombre);
     }
+
     //default constructor
     public Visa(){
         super();

@@ -26,6 +26,7 @@ public class BootStrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        //creamos objetos de prueba...
         MarcaTarjeta visa;
         MarcaTarjeta nara;
         MarcaTarjeta amex;
@@ -49,6 +50,7 @@ public class BootStrapData implements CommandLineRunner {
 
         compra = new Operacion(tarjetaNara, LocalDate.now(), 700.00);
 
+        //los persistimos en la Base de Datos...
         repositorioMarcaTarjetas.save(visa);
         repositorioMarcaTarjetas.save(nara);
         repositorioMarcaTarjetas.save(amex);
@@ -63,6 +65,7 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println("Cantidad de tarjetas en sistema: " + repositorioTarjetas.count());
         System.out.println("Cantidad de marcas en sistema: " + repositorioMarcaTarjetas.count());
 
+        //Realizamos los casos de prueba especificados en el punto 1...
         System.out.println("Obteniendo toda la informacion sobre una tarjeta: "
                 + tarjetaVisa.obtenerDatos());
 

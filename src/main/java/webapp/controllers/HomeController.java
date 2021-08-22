@@ -19,7 +19,8 @@ public class HomeController {
     }
 
     @RequestMapping("")
-    public String getIndex(Model model){ //el model lo provee Spring
+    //en la pagina de inicio se mostrara un listado de todas las tarjetas y marcas existentes
+    public String getIndex(Model model){
         model.addAttribute("tarjetas",repositorioTarjetas.findAll());
         model.addAttribute("marcasTarjetas",repositorioMarcaTarjetas.findAll());
         return "/index";
