@@ -24,11 +24,11 @@ public class Operacion {
         this.tarjeta = tarjeta;
         this.fecha = fecha;
         //chequear valor de monto
-        if(monto > 1000.00) {
+        if(monto < 1000.00) {
             this.monto = monto;
         }
         else{
-            throw new OperacionInvalidaException("Operacion Invalida. El monto debe ser mayor a $1000");
+            throw new OperacionInvalidaException("Operacion Invalida. El monto debe ser menor a $1000");
         }
     }
 
@@ -57,10 +57,14 @@ public class Operacion {
     }
 
     public boolean esValida(){
-        return monto > 1000.00;
+        return monto < 1000.00;
     }
     //code smell: metodo "pasamanos" -> mejorar
-    public static Double calcularTasa(MarcaTarjeta marca, Double importe, LocalDate fecha){
+    public static Double calcularTasa(MarcaTarjeta marca, Double importe, LocalDate fecha)
+            throws OperacionInvalidaException{
+        if(importe > 1000.00){
+            throw new OperacionInvalidaException("Operacion Invalida. El monto debe ser menor a $1000");
+        }
         return marca.tasaOperacion(importe, fecha);
     }
 }

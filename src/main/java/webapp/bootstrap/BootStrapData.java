@@ -47,7 +47,7 @@ public class BootStrapData implements CommandLineRunner {
         tarjetaNara = new Tarjeta(nara,432199999,"Pepe","Gomez",vencimientoNara);
         tarjetaAmex = new Tarjeta(amex, 432177777,"Ana","Perez",vencimientoAmex);
 
-        compra = new Operacion(tarjetaNara, LocalDate.now(), 7000.00);
+        compra = new Operacion(tarjetaNara, LocalDate.now(), 700.00);
 
         repositorioMarcaTarjetas.save(visa);
         repositorioMarcaTarjetas.save(nara);
@@ -75,8 +75,8 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println("Tarjeta Amex y Tarjeta Visa son iguales: "
                 + tarjetaAmex.equals(tarjetaVisa));
 
-        System.out.println("Calculamos Tasa para AMEX con importe de $2000.00: "
-                + Operacion.calcularTasa(amex, 2000.00, LocalDate.now()));
+        System.out.println("Calculamos Tasa para AMEX con importe de $200.00: "
+                + Operacion.calcularTasa(amex, 200.00, LocalDate.now()));
 
     }
 }

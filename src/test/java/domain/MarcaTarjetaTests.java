@@ -24,8 +24,8 @@ public class MarcaTarjetaTests {
     @Test
     public void tasasDeOperacionEsperadas(){
         LocalDate fechaTest = LocalDate.of(2021,8,21);
-        assertEquals(visa.tasaOperacion(3000.00, fechaTest),78.75,0.01);
-        assertEquals(nara.tasaOperacion(3000.00, fechaTest),315.0,0.1);
-        assertEquals(amex.tasaOperacion(3000.00, fechaTest),24.0,0.1);
+        assertEquals(visa.tasaOperacion(300.00, fechaTest),7.87,0.01);
+        assertEquals(nara.tasaOperacion(300.00, fechaTest),31.5,0.01);
+        assertEquals(amex.tasaOperacion(300.00, fechaTest),2.4,0.1);
     }
 }

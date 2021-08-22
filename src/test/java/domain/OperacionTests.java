@@ -25,19 +25,19 @@ public class OperacionTests {
 
     @Test
     public void operacionDeberiaSerValida(){
-        Operacion operacion = new Operacion(tarjetaVisa,LocalDate.now(),5000.00);
+        Operacion operacion = new Operacion(tarjetaVisa,LocalDate.now(),500.00);
         assertTrue(operacion.esValida());
     }
     @Test
     public void operacionDeberiaSerInvalida(){
         exception.expect(OperacionInvalidaException.class);
-        exception.expectMessage("Operacion Invalida. El monto debe ser mayor a $1000");
-        Operacion operacion = new Operacion(tarjetaVisa,LocalDate.now(),500.00);
+        exception.expectMessage("Operacion Invalida. El monto debe ser menor a $1000");
+        Operacion operacion = new Operacion(tarjetaVisa,LocalDate.now(),5000.00);
     }
     @Test
     public void operacionConTasaEsperada(){
         MarcaTarjeta visa = new Visa(NombreMarca.VISA);
         LocalDate fechaTest = LocalDate.of(2021,8,21);
-        assertEquals(Operacion.calcularTasa(visa,3000.00,fechaTest),78.75,0.01);
+        assertEquals(Operacion.calcularTasa(visa,300.00,fechaTest),7.87,0.01);
     }
 }
