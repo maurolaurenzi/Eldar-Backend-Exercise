@@ -23,6 +23,6 @@ public class HomeController {
     public String getIndex(Model model){
         model.addAttribute("tarjetas",repositorioTarjetas.findAll());
         model.addAttribute("marcasTarjetas",repositorioMarcaTarjetas.findAll());
-        return "/index";
+        return "index";
     }
 }
