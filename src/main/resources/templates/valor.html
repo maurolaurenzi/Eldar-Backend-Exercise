@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasa de Operacion</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Marca</th>
+        <th>Monto</th>
+    </tr>
+        <td th:text="${nombreMarca}">123</td>
+        <td th:text="${monto}"> Spring in Action</td>
+    </tr>
+</table>
+
+<br>
+<br>
+<h1>Valor:</h1> <h1 th:text="${resultado}"></h1>
+<br>
+<br>
+<form action="/tasas">
+    <input type="submit" value="Volver" />
+</form>
+</body>
+</html>
