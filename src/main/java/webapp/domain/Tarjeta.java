@@ -1,5 +1,6 @@
 package webapp.domain;
 
+import com.sun.istack.NotNull;
 import webapp.domain.MarcaTarjeta;
 import webapp.domain.Operacion;
 
@@ -11,10 +12,15 @@ import java.util.Set;
 public class Tarjeta {
     @Id @GeneratedValue
     private Long id;
+    @NotNull @Column(unique = true)
     private Integer numero;
+    @NotNull
     private String nombreTitular;
+    @NotNull
     private String apellidoTitutlar;
+    @NotNull
     private LocalDate fechaVencimiento;
+    @NotNull
     @ManyToOne
     private MarcaTarjeta marca;
     @OneToMany

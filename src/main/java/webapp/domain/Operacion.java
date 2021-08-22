@@ -1,5 +1,7 @@
 package webapp.domain;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,9 +11,12 @@ import java.time.LocalDate;
 public class Operacion {
     @Id @GeneratedValue
     private Long id;
+    @NotNull
     @ManyToOne
     private Tarjeta tarjeta;
+    @NotNull
     private LocalDate fecha;
+    @NotNull
     private Double monto;
 
     public Operacion(Tarjeta tarjeta, LocalDate fecha, Double monto) {
