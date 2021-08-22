@@ -21,7 +21,7 @@ public class MarcasController {
         this.repositorioMarcaTarjetas = repositorioMarcaTarjetas;
     }
     //buscamos la marca segun el nombre -> deberia implementarse metodo en Repositorio -> findByName()
-    @RequestMapping("/tasas/valor")
+    @RequestMapping("tasas/valor")
     public String getTasa(Model model, @RequestParam(name = "marca") NombreMarca nombre,
                           @RequestParam(name = "monto") Double monto){
         Double valor = -1.00;
@@ -36,12 +36,12 @@ public class MarcasController {
         model.addAttribute("monto",monto);
         model.addAttribute("resultado",valor);
 
-        return "/valor";
+        return "valor";
     }
 
-    @RequestMapping("/tasas")
+    @RequestMapping("tasas")
     public String getIndex(Model model){ //el model lo provee Spring
         model.addAttribute("marcasTarjetas",repositorioMarcaTarjetas.findAll());
-        return "/tasa";
+        return "tasa";
     }
 }
