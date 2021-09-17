@@ -1,5 +1,4 @@
-# Eldar-Backend-Exercise
-## URL: https://eldar-java-challenge.herokuapp.com/  
+# POS-Backend-Exercise
 
 ## Introducción  
 
@@ -44,6 +43,4 @@ IMPORTANTE: Realizar el correspondiente manejo de excepciones en casos de error.
 
 2) Implementar una API REST, que responda y reciba en formato JSON, que permita
 consultar la tasa de una operación, informando marca de la tarjeta e importe.
-Hostear solución en algún cloud computing libre e indicar URL  
 
-IMPORTANTE: Compartir código en GIT con la solución de ambos ejercicios
